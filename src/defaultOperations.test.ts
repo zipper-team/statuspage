@@ -1,3 +1,5 @@
+/*global jest*/
+/*eslint no-undef: "error"*/
 import DefaultOperations from "./defaultOperations";
 const axios = jest.requireActual("axios");
 jest.unmock("axios");
