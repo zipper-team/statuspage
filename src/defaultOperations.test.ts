@@ -82,30 +82,30 @@ test("verify CREATE", async () => {
 });
 
 test("verify UPDATE", async () => {
-    const expectedReturn = { id: "1", name: "expecting name" };
-    mockAxios
-      .onPatch(`https://api.statuspage.io/v1/pages/${pageId}/${path}/1`, {
-        name: "expecting name",
-      })
-      .reply(200, expectedReturn);
-  
-    const defaultOperations = new DefaultOperations(pageId, apiKey, path);
-  
-    let returnedObject = await defaultOperations.update("1", {
+  const expectedReturn = { id: "1", name: "expecting name" };
+  mockAxios
+    .onPatch(`https://api.statuspage.io/v1/pages/${pageId}/${path}/1`, {
       name: "expecting name",
-    });
-  
-    expect(returnedObject).toEqual(expectedReturn);
+    })
+    .reply(200, expectedReturn);
+
+  const defaultOperations = new DefaultOperations(pageId, apiKey, path);
+
+  let returnedObject = await defaultOperations.update("1", {
+    name: "expecting name",
   });
 
-  test("verify DELETE", async () => {
-    mockAxios
-      .onDelete(`https://api.statuspage.io/v1/pages/${pageId}/${path}/1`)
-      .reply(204);
-  
-    const defaultOperations = new DefaultOperations(pageId, apiKey, path);
-  
-    let returnedObject = await defaultOperations.delete("1");
-  
-    expect(returnedObject).toBeUndefined();
-  });
+  expect(returnedObject).toEqual(expectedReturn);
+});
+
+test("verify DELETE", async () => {
+  mockAxios
+    .onDelete(`https://api.statuspage.io/v1/pages/${pageId}/${path}/1`)
+    .reply(204);
+
+  const defaultOperations = new DefaultOperations(pageId, apiKey, path);
+
+  let returnedObject = await defaultOperations.delete("1");
+
+  expect(returnedObject).toBeUndefined();
+});
