@@ -9,7 +9,7 @@ test('I can import StatusPage', () => {
 });
 
 test('I can require StatusPage', () => {
-    expect(require('./StatusPage')).toBeDefined();
+    expect(require('./statuspage')).toBeDefined();
 });
 
 test("verify components", async () => {
