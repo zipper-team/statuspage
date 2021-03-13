@@ -28,6 +28,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
+          npm install
           jest --coverage
           export CODACY_PROJECT_TOKEN=c6e1f3818bdc4bf8a9177e4ab2184d8b
           bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l JavaScript -r coverage/lcov.info
