@@ -1,8 +1,11 @@
-import DefaultOperations from "./defaultOperations";
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import CRUDOperations from './crudOperations';
 
 const StatusPage = class StatusPage {
   pageId: String;
+
   apiKey: String;
+
   config: Object;
 
   constructor(pageId: String, apiKey: String) {
@@ -10,23 +13,23 @@ const StatusPage = class StatusPage {
     this.apiKey = apiKey;
   }
 
-  incidents(): DefaultOperations<Object> {
-    return new DefaultOperations<Object>(this.pageId, this.apiKey, "incidents");
+  incidents(): CRUDOperations<Object> {
+    return new CRUDOperations<Object>(this.pageId, this.apiKey, 'incidents');
   }
 
-  components(): DefaultOperations<Object> {
-    return new DefaultOperations<Object>(
+  components(): CRUDOperations<Object> {
+    return new CRUDOperations<Object>(
       this.pageId,
       this.apiKey,
-      "components"
+      'components',
     );
   }
 
-  componentGroups(): DefaultOperations<Object> {
-    return new DefaultOperations<Object>(
+  componentGroups(): CRUDOperations<Object> {
+    return new CRUDOperations<Object>(
       this.pageId,
       this.apiKey,
-      "component-groups"
+      'component-groups',
     );
   }
 };
