@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved, import/extensions
 import CRUDOperations from './crudOperations';
 
 const axios = jest.requireActual('axios');
@@ -19,7 +18,7 @@ test('I can import CRUDOperations', () => {
 });
 
 test('I can require CRUDOperations', () => {
-  // eslint-disable-next-line global-require, import/no-unresolved
+  // eslint-disable-next-line global-require
   expect(require('./crudOperations')).toBeDefined();
 });
 

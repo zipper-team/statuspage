@@ -1,6 +1,4 @@
-// eslint-disable-next-line import/no-unresolved, import/extensions
 import CRUDOperations from './crudOperations';
-// eslint-disable-next-line import/no-unresolved, import/extensions
 import StatusPage from './statuspage';
 
 const pageId = '12345';
@@ -11,7 +9,7 @@ test('I can import StatusPage', () => {
 });
 
 test('I can require StatusPage', () => {
-  // eslint-disable-next-line global-require, import/no-unresolved
+  // eslint-disable-next-line global-require
   expect(require('./statuspage')).toBeDefined();
 });
 
